@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="10sp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_list_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:text="文件名"
+        android:textColor="#1882B5"
+        android:textSize="30sp"></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="12sp"
+            android:layout_marginLeft="10sp"
+            android:text="过期时间: "
+            android:textColor="#FF9800"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/expire_tm"
+            android:layout_width="wrap_content"
+            android:layout_height="12sp"
+            android:layout_marginBottom="10sp"
+            android:text="xx.xx."
+            android:textColor="#FF9800"
+            android:textSize="10sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:textColor="#b3bdc7"
+            android:text="颁发者: "
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/issr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10sp"
+            android:text="xxxx"
+            android:textColor="#b3bdc7"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>
