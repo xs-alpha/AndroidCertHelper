@@ -19,19 +19,36 @@
  />
 
     <TextView
+        android:id="@+id/cert_path"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:text="选择路径:"
         android:gravity="center"
         ></TextView>
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
-        android:id="@+id/refresh"
-        android:layout_height="wrap_content"
-        android:text="刷新"
-        android:gravity="center"
-        ></Button>
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <Switch
+            android:id="@+id/is_expire_show_only"
+            android:textOn = "全部"
+            android:showText="true"
+            android:textOff = "过期"
+            android:checked="true"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="0dp"
+            android:id="@+id/refresh"
+            android:layout_weight="6"
+            android:layout_height="wrap_content"
+            android:text="刷新"
+            android:gravity="center"
+            ></Button>
+    </LinearLayout>
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"

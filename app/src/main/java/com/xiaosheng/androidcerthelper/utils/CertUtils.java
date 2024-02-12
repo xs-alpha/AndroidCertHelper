@@ -3,6 +3,7 @@ package com.xiaosheng.androidcerthelper.utils;
 import android.util.Log;
 
 import com.blankj.utilcode.util.ToastUtils;
+import com.xiaosheng.androidcerthelper.constants.Constants;
 import com.xiaosheng.androidcerthelper.entiy.CertInfo;
 
 import java.io.File;
@@ -32,13 +33,12 @@ public class CertUtils {
                             X509Certificate x509Cert = (X509Certificate) cert;
                             Date notAfter = x509Cert.getNotAfter();
 
-                            if (notAfter.before(new Date())) {
+                            // 全部  过期
                                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                                 String expiryDate = dateFormat.format(notAfter);
 
                                 LogUtils.log("文件名: " + certFile.getName());
                                 LogUtils.log("过期时间:"+expiryDate);
-//                                System.out.println("证书信息: " + x509Cert.toString());
                                 String issuer = x509Cert.getIssuerDN().getName();
                                 String subject = x509Cert.getSubjectDN().getName();
 
@@ -51,6 +51,11 @@ public class CertUtils {
                                 certInfo.setIssuer(issuer);
                                 certInfo.setTitle(certFile.getName());
 
+                            if (!Constants.IS_EXPIRE_SHOW_ONLY ) {
+                                certInfos.add(certInfo);
+                                continue;
+                            }
+                            if (notAfter.before(new Date())){
                                 certInfos.add(certInfo);
                             }
                         }
