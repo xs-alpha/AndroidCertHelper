@@ -17,6 +17,25 @@
         android:textStyle="bold"
         android:textSize="30sp"
  />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_margin="4sp"
+        android:layout_height="wrap_content">
+        <SearchView
+            android:id="@+id/search_view"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:background="#F8EBD2"
+            android:layout_height="wrap_content"></SearchView>
+        <Button
+            android:id="@+id/search_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="搜索"
+            android:layout_marginLeft="6sp"
+            android:layout_height="wrap_content"></Button>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/cert_path"
@@ -29,6 +48,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
+        android:layout_margin="4sp"
         android:layout_height="wrap_content">
 
         <Switch
