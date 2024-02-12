@@ -113,7 +113,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return;
             }
             threadPool.executor(()->{
-                certInfos = totalCertInfos.stream().filter(c -> c.getIssuer().toLowerCase().indexOf(queryMsg.toLowerCase()) > 0).collect(Collectors.toList());
+                certInfos = totalCertInfos.stream()
+                        .filter(c -> c.getIssuer().toLowerCase().indexOf(queryMsg.toLowerCase()) > 0)
+                        .filter(c->c.isExpired()==Constants.IS_EXPIRE_SHOW_ONLY)
+                        .collect(Collectors.toList());
                 renderingListView(certInfos);
             });
 

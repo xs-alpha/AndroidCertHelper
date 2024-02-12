@@ -6,6 +6,16 @@ public class CertInfo {
 
     private String issuer;
 
+    public boolean isExpired() {
+        return isExpired;
+    }
+
+    public void setExpired(boolean expired) {
+        isExpired = expired;
+    }
+
+    private boolean isExpired;
+
     public String getTitle() {
         return title;
     }

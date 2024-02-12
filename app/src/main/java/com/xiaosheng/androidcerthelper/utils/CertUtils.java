@@ -50,6 +50,7 @@ public class CertUtils {
                                 certInfo.setExpireTm(expiryDate);
                                 certInfo.setIssuer(issuer);
                                 certInfo.setTitle(certFile.getName());
+                                certInfo.setExpired(notAfter.before(new Date()));
 
                             if (!Constants.IS_EXPIRE_SHOW_ONLY ) {
                                 certInfos.add(certInfo);
