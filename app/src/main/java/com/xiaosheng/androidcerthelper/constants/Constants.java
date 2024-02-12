@@ -6,4 +6,6 @@ public class Constants {
     public static boolean INSTALL_APK = true;
 
     public static String DEFAULT_CERT_PATH = "/system/etc/security/cacerts/";
+
+    public static final String TAG = "xiaosheng";
 }
